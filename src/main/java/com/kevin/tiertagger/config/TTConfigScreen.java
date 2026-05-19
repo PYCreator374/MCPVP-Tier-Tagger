@@ -3,6 +3,7 @@ package com.kevin.tiertagger.config;
 import com.kevin.tiertagger.TierCache;
 import com.kevin.tiertagger.TierTagger;
 import com.kevin.tiertagger.tierlist.PlayerSearchScreen;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.tab.Tab;
 import net.minecraft.client.gui.tooltip.Tooltip;
@@ -19,6 +20,11 @@ import java.util.stream.Collectors;
 public class TTConfigScreen extends TabbedConfigScreen<TierTaggerConfig> {
     public TTConfigScreen(Screen parent) {
         super("TierTagger Config", parent, TierTagger.getManager());
+    }
+
+    @Override
+    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+        super.render(context, mouseX, mouseY, delta);
     }
 
     @Override
